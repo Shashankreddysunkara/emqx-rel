@@ -6,7 +6,7 @@ DEPS += emqx emqx_retainer emqx_recon emqx_reloader emqx_dashboard emqx_manageme
 		emqx_auth_clientid emqx_auth_username emqx_auth_ldap emqx_auth_http \
         emqx_auth_mysql emqx_auth_pgsql emqx_auth_redis emqx_auth_mongo \
         emqx_sn emqx_coap emqx_lwm2m emqx_stomp emqx_plugin_template emqx_web_hook \
-        emqx_auth_jwt emqx_statsd emqx_delayed_publish emqx_lua_hook
+        emqx_auth_jwt emqx_statsd emqx_delayed_publish emqx_lua_hook push_broker
 
 # emqx and plugins
 dep_emqx            = git https://github.com/emqx/emqx v3.0-rc.3
@@ -17,6 +17,8 @@ dep_emqx_dashboard  = git https://github.com/emqx/emqx-dashboard v3.0-rc.3
 dep_emqx_management = git https://github.com/emqx/emqx-management v3.0-rc.3
 dep_emqx_statsd     = git https://github.com/emqx/emqx-statsd v3.0-rc.3
 dep_emqx_delayed_publish = git https://github.com/emqx/emqx-delayed-publish v3.0-rc.3
+
+dep_push_broker     = git https://github.com/claymcenter/push_broker master
 
 # emq auth/acl plugins
 dep_emqx_auth_clientid = git https://github.com/emqx/emqx-auth-clientid v3.0-rc.3
