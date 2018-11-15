@@ -18,7 +18,7 @@ dep_emqx_management = git https://github.com/emqx/emqx-management v3.0-rc.3
 dep_emqx_statsd     = git https://github.com/emqx/emqx-statsd v3.0-rc.3
 dep_emqx_delayed_publish = git https://github.com/emqx/emqx-delayed-publish v3.0-rc.3
 
-dep_push_broker     = git https://github.com/claymcenter/push_broker master
+dep_push_broker     = git git@github.com:claymcenter/push_broker master
 
 # emq auth/acl plugins
 dep_emqx_auth_clientid = git https://github.com/emqx/emqx-auth-clientid v3.0-rc.3
