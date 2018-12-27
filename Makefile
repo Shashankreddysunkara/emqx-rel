@@ -7,6 +7,10 @@ PROJECT_DESCRIPTION = Release Project for EMQ X Broker
 ## DEPS += emqx
 ## dep_emqx = git https://github.com/emqx/emqx.git emqx30
 
+DEPS += push_broker
+dep_push_broker     = git git@github.com:claymcenter/push_broker master
+
+
 OUR_APPS = emqx emqx-retainer emqx-recon emqx-reloader emqx-dashboard emqx-management \
            emqx-auth-clientid emqx-auth-username emqx-auth-ldap emqx-auth-http \
            emqx-auth-mysql emqx-auth-pgsql emqx-auth-redis emqx-auth-mongo \
@@ -37,6 +41,7 @@ DEPS += $(foreach dep,$(OUR_APPS),$(call app_name,$(dep)))
 # Inject variables like
 # dep_app_name = git-emqx https://github.com/emqx/app-name branch-or-tag
 # for erlang.mk
+
 $(foreach dep,$(OUR_APPS),$(eval dep_$(call app_name,$(dep)) = git-emqx https://github.com/emqx/$(dep) $(call app_vsn,$(dep))))
 
 # Add this dependency before including erlang.mk
