@@ -7,9 +7,9 @@ PROJECT_DESCRIPTION = Release Project for EMQ X Broker
 ## DEPS += emqx
 ## dep_emqx = git https://github.com/emqx/emqx.git emqx30
 
-DEPS += push_broker
+DEPS += push_broker emqx_influx_exporter
 dep_push_broker     = git git@github.com:claymcenter/push_broker v2
-
+dep_emqx_influx_exporter = git https://github.com/s4kibs4mi/emqx_influx_exporter master
 
 OUR_APPS = emqx emqx-retainer emqx-recon emqx-reloader emqx-dashboard emqx-management \
            emqx-auth-clientid emqx-auth-username emqx-auth-ldap emqx-auth-http \
