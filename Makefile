@@ -5,7 +5,7 @@ PROJECT_DESCRIPTION = Release Project for EMQ X Broker
 # By default, app name is the same as repo name with dash replaced by underscore.
 # Otherwise define the dependency in regular erlang.mk style:
 ## DEPS += emqx
-## dep_emqx = git https://github.com/emqx/emqx.git emqx30
+## dep_emqx = git https://github.com/emqx/emqx.git v3.0.1
 
 DEPS += push_broker emqx_influx_exporter
 dep_push_broker     = git git@github.com:claymcenter/push_broker with-jwt
