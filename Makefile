@@ -24,7 +24,7 @@ DEPLOY ?= cloud
 
 # Default version for all OUR_APPS
 ## This is either a tag or branch name for ALL dependencies
-EMQX_DEPS_DEFAULT_VSN ?= master
+EMQX_DEPS_DEFAULT_VSN ?= v3.1-beta.3
 
 dash = -
 uscore = _
