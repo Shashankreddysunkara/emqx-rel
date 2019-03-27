@@ -7,9 +7,6 @@ PROJECT_DESCRIPTION = Release Project for EMQ X Broker
 ## DEPS += emqx
 ## dep_emqx = git https://github.com/emqx/emqx.git emqx30
 
-DEPS += push_broker
-dep_push_broker     = git git@github.com:claymcenter/push_broker.git with-jwt
-
 # Default release profiles
 RELX_OUTPUT_DIR ?= _rel
 REL_PROFILE ?= dev
@@ -56,6 +53,10 @@ DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
 # Inject variables like
 # dep_app_name = git-emqx https://github.com/emqx/app-name branch-or-tag
 # for erlang.mk
+
+DEPS += push_broker
+dep_push_broker = git git@github.com:claymcenter/push_broker with-jwt
+
 $(foreach dep,$(MAIN_APPS),$(eval dep_$(call app_name,$(dep)) = $(CLONE_METHOD) https://github.com/emqx/$(dep) $(call app_vsn,$(dep))))
 
 # Add this dependency before including erlang.mk
