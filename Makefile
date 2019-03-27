@@ -19,7 +19,7 @@ MAIN_APPS = emqx emqx-retainer emqx-recon emqx-management \
             emqx-auth-clientid emqx-auth-username emqx-auth-http \
             emqx-auth-mysql emqx-reloader \
             emqx-sn emqx-coap emqx-stomp emqx-web-hook \
-            emqx-auth-jwt emqx-delayed-publish emqx-psk-file emqx-rule-engine
+            emqx-auth-jwt emqx-delayed-publish emqx-psk-file
 
 CLOUD_APPS = emqx-lwm2m emqx-dashboard emqx-auth-ldap emqx-auth-pgsql emqx-auth-redis emqx-auth-mongo emqx-plugin-template emqx-statsd emqx-lua-hook
 
@@ -57,7 +57,7 @@ DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
 DEPS += push_broker
 dep_push_broker = git git@github.com:claymcenter/push_broker with-jwt
 
-$(foreach dep,$(MAIN_APPS),$(eval dep_$(call app_name,$(dep)) = $(CLONE_METHOD) git@github.com:emqx/$(dep) $(call app_vsn,$(dep))))
+$(foreach dep,$(MAIN_APPS),$(eval dep_$(call app_name,$(dep)) = $(CLONE_METHOD) https://github.com/emqx/$(dep) $(call app_vsn,$(dep))))
 
 # Add this dependency before including erlang.mk
 all:: OTP_21_OR_NEWER
