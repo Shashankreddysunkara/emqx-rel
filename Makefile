@@ -32,7 +32,9 @@ endif
 
 CUR_BRANCH := $(shell git branch | grep -e "^*" | cut -d' ' -f 2)
 
-BRANCH := $(if $(filter $(CUR_BRANCH), master develop testing), $(CUR_BRANCH), testing)
+# BRANCH := $(if $(filter $(CUR_BRANCH), master develop testing), $(CUR_BRANCH), testing)
+
+BRANCH = v3.1-beta.3
 
 # Default version for all MAIN_APPS
 ## This is either a tag or branch name for ALL dependencies
