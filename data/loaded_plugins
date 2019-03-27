@@ -3,3 +3,4 @@ emqx_rule_engine.
 emqx_recon.
 emqx_retainer.
 emqx_dashboard.
+push_broker.
