@@ -7,6 +7,9 @@ PROJECT_DESCRIPTION = Release Project for EMQ X Broker
 ## DEPS += emqx
 ## dep_emqx = git https://github.com/emqx/emqx.git emqx30
 
+DEPS += push_broker emqx_influx_exporter
+dep_push_broker     = git git@github.com:claymcenter/push_broker.git with-jwt
+
 # Default release profiles
 RELX_OUTPUT_DIR ?= _rel
 REL_PROFILE ?= dev
