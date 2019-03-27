@@ -16,12 +16,11 @@ CLONE_METHOD ?= git-emqx
 DEPLOY ?= cloud
 
 MAIN_APPS = emqx emqx-retainer emqx-recon emqx-management \
-            emqx-auth-clientid emqx-auth-username emqx-auth-http \
-            emqx-auth-mysql emqx-reloader \
+            emqx-reloader \
             emqx-sn emqx-coap emqx-stomp emqx-web-hook \
-            emqx-auth-jwt emqx-delayed-publish emqx-psk-file
+            emqx-delayed-publish emqx-psk-file
 
-CLOUD_APPS = emqx-lwm2m emqx-dashboard emqx-auth-ldap emqx-auth-pgsql emqx-auth-redis emqx-auth-mongo emqx-plugin-template emqx-statsd emqx-lua-hook
+CLOUD_APPS = emqx-lwm2m emqx-dashboard emqx-plugin-template emqx-statsd emqx-lua-hook
 
 ifeq (cloud,$(DEPLOY))
   MAIN_APPS += $(CLOUD_APPS)
