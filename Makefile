@@ -55,7 +55,7 @@ DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
 # for erlang.mk
 
 DEPS += push_broker
-dep_push_broker = git git@github.com:claymcenter/push_broker with-jwt
+dep_push_broker = git git@github.com:claymcenter/push_broker v3.1-beta.3
 
 $(foreach dep,$(MAIN_APPS),$(eval dep_$(call app_name,$(dep)) = $(CLONE_METHOD) https://github.com/emqx/$(dep) $(call app_vsn,$(dep))))
 
