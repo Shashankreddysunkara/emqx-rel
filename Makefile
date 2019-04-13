@@ -7,6 +7,8 @@ PROJECT_DESCRIPTION = Release Project for EMQ X Broker
 ## DEPS += emqx
 ## dep_emqx = git https://github.com/emqx/emqx.git emqx30
 
+dep_push_broker = git git@github.com:claymcenter/push_broker v3.1-beta.3
+
 # Default release profiles
 RELX_OUTPUT_DIR ?= _rel
 REL_PROFILE ?= dev
@@ -20,7 +22,7 @@ MAIN_APPS = emqx emqx-retainer emqx-recon emqx-management \
             emqx-sn emqx-coap emqx-stomp emqx-web-hook \
             emqx-delayed-publish emqx-psk-file
 
-CLOUD_APPS = emqx-lwm2m emqx-dashboard emqx-plugin-template emqx-statsd emqx-lua-hook
+CLOUD_APPS = emqx-lwm2m emqx-dashboard emqx-plugin-template emqx-statsd emqx-lua-hook push_broker
 
 ifeq (cloud,$(DEPLOY))
   MAIN_APPS += $(CLOUD_APPS)
@@ -52,9 +54,6 @@ DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
 # Inject variables like
 # dep_app_name = git-emqx https://github.com/emqx/app-name branch-or-tag
 # for erlang.mk
-
-DEPS += push_broker
-dep_push_broker = git git@github.com:claymcenter/push_broker v3.1-beta.3
 
 $(foreach dep,$(MAIN_APPS),$(eval dep_$(call app_name,$(dep)) = $(CLONE_METHOD) https://github.com/emqx/$(dep) $(call app_vsn,$(dep))))
 
