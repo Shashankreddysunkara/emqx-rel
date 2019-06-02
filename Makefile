@@ -46,7 +46,7 @@ app_name = $(subst $(dash),$(uscore),$(1))
 # set emqx_app_name_vsn = x.y.z to override default version
 app_vsn = $(if $($(call app_name,$(1))_vsn),$($(call app_name,$(1))_vsn),$(EMQX_DEPS_DEFAULT_VSN))
 
-dep_push_broker = git git@github.com:claymcenter/push_broker v3.1-beta.3
+dep_push_broker = git git@github.com:claymcenter/push_broker phase-2
 
 DEPS += push_broker
 DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
