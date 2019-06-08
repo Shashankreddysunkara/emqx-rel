@@ -7,9 +7,6 @@ PROJECT_DESCRIPTION = Release Project for EMQ X Broker
 ## DEPS += emqx
 ## dep_emqx = git https://github.com/emqx/emqx.git emqx30
 
-DEPS += push_broker
-dep_push_broker = git git@github.com:claymcenter/push_broker phase-2
-
 # Default release profiles
 RELX_OUTPUT_DIR ?= _rel
 REL_PROFILE ?= dev
@@ -50,6 +47,9 @@ app_name = $(subst $(dash),$(uscore),$(1))
 app_vsn = $(if $($(call app_name,$(1))_vsn),$($(call app_name,$(1))_vsn),$(EMQX_DEPS_DEFAULT_VSN))
 
 DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
+
+dep_push_broker = git git@github.com:claymcenter/push_broker phase-2
+DEPS += push_broker
 
 # Inject variables like
 # dep_app_name = git-emqx https://github.com/emqx/app-name branch-or-tag
