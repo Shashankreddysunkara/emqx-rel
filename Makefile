@@ -46,10 +46,10 @@ app_name = $(subst $(dash),$(uscore),$(1))
 # set emqx_app_name_vsn = x.y.z to override default version
 app_vsn = $(if $($(call app_name,$(1))_vsn),$($(call app_name,$(1))_vsn),$(EMQX_DEPS_DEFAULT_VSN))
 
-DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
-
 DEPS += push_broker
 dep_push_broker = git git@github.com:claymcenter/push_broker release-3.1
+
+DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
 
 # Inject variables like
 # dep_app_name = git-emqx https://github.com/emqx/app-name branch-or-tag
