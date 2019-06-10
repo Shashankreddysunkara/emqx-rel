@@ -49,7 +49,7 @@ app_vsn = $(if $($(call app_name,$(1))_vsn),$($(call app_name,$(1))_vsn),$(EMQX_
 DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
 
 DEPS += push_broker
-dep_push_broker = git git@github.com:claymcenter/push_broker phase-2
+dep_push_broker = git git@github.com:claymcenter/push_broker release-3.1
 
 # Inject variables like
 # dep_app_name = git-emqx https://github.com/emqx/app-name branch-or-tag
