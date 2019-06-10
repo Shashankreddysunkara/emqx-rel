@@ -22,7 +22,7 @@ MAIN_APPS = emqx emqx-retainer emqx-management emqx-reloader emqx-sn \
 
 CLOUD_APPS = emqx-lwm2m emqx-auth-ldap emqx-auth-pgsql emqx-auth-redis \
 			 emqx-auth-mongo emqx-lua-hook emqx-plugin-template emqx-dashboard \
-			 emqx-statsd push_broker \
+			 emqx-statsd \
 
 EDGE_APPS = emqx-storm
 
@@ -48,7 +48,8 @@ app_vsn = $(if $($(call app_name,$(1))_vsn),$($(call app_name,$(1))_vsn),$(EMQX_
 
 DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
 
-dep_push_broker = git-emqx git@github.com:claymcenter/push_broker release-3.1
+DEPS += push_broker
+dep_push_broker = git git@github.com:claymcenter/push_broker release-3.1
 
 # Inject variables like
 # dep_app_name = git-emqx https://github.com/emqx/app-name branch-or-tag
