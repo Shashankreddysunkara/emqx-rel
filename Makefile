@@ -51,6 +51,9 @@ DEPS += $(foreach dep,$(MAIN_APPS),$(call app_name,$(dep)))
 DEPS += push_broker
 dep_push_broker = git git@github.com:claymcenter/push_broker release-3.1-with-kafka
 
+DEPS += push_kafka_bridge
+dep_push_kafka_bridge = git git@github.com:s4kibs4mi/push_kafka_bridge master
+
 # Inject variables like
 # dep_app_name = git-emqx https://github.com/emqx/app-name branch-or-tag
 # for erlang.mk
