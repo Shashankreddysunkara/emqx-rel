@@ -15,7 +15,10 @@ export MESSAGE_SERVICE_URL=http://localhost:5005/v1
 export MESSAGE_SERVICE_AUTH_TOKEN=YWRtaW46YWRtaW4=
 export JWT_SECRET=sdk
 export AES_KEY=com.datacultr.experience.sdk.256
-export KAFKA_URL=128.199.89.247:9092
+export KAFKA_HOST=128.199.89.247
+export KAFKA_PORT=9092
+export KAFKA_POOL_COUNT=2
+export KAFKA_POOL_COUNT_MAX=10
 
 make
 
