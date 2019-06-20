@@ -2,7 +2,7 @@
 
 export AMQP_USERNAME=guest
 export AMQP_PASSWORD=guest
-export AMQP_HOST=128.199.89.247
+export AMQP_HOST=localhost
 export AMQP_PORT=5672
 export AMQP_EXCHANGE=push_broker
 export AMQP_QUEUE=message
