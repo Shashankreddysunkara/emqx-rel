@@ -20,6 +20,6 @@ export KAFKA_PORT=9092
 export KAFKA_POOL_COUNT=2
 export KAFKA_POOL_COUNT_MAX=10
 
-make
+#make
 
 ./_rel/emqx/bin/emqx console
