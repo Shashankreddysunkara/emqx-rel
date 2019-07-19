@@ -19,7 +19,8 @@ export KAFKA_HOST=128.199.89.247
 export KAFKA_PORT=9092
 export KAFKA_POOL_COUNT=2
 export KAFKA_POOL_COUNT_MAX=10
+export UPSTREAM_TOPICS=".devices.ping,.devices.location,.devices.health"
 
-#make
+make
 
 ./_rel/emqx/bin/emqx console
