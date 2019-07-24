@@ -52,7 +52,7 @@ DEPS += push_broker
 dep_push_broker = git git@github.com:claymcenter/push_broker release-3.1
 
 DEPS += push_kafka_bridge
-dep_push_kafka_bridge = git git@github.com:s4kibs4mi/push_kafka_bridge master
+dep_push_kafka_bridge = git git@github.com:s4kibs4mi/push_kafka_bridge with-brod
 
 # Inject variables like
 # dep_app_name = git-emqx https://github.com/emqx/app-name branch-or-tag
