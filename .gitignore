@@ -22,3 +22,4 @@ ct/logs/*
 *.iml
 vars.config
 erlang.mk
+ssh

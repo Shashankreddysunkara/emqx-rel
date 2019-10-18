@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  emqx-builder:
+    image: elixir:1.7
+    volumes:
+      - ./ssh/:/root/.ssh/
+      - .:/root/
+    command: ["sleep", "1000000"]
+    environment:
+      - EMQX_NAME=emqx
+      - EMQX_NODE__COOKIE=secret
+      - EMQX_NODE__NAME=emqx@emqx.local
+      - EMQX_HOST=emqx.local
+      - EMQX_ADMIN_PASSWORD=clayMX
+      - EMQX_LISTENER__TCP__EXTERNAL__MAX_CLIENTS=10240000
+      - EMQX_LISTENER__TCP__EXTERNAL__MAX_CONN_RATE=10240000
+      - EMQX_LISTENER__TCP__EXTERNAL__MAX_CONNECTIONS=10240000
+      - EMQX_ZONE__EXTERNAL__RETRY_INTERVAL=60s
+      - AMQP_URI=amqp://guest:guest@178.128.92.77:5672
+      - AMQP_HOST=localhost
+      - AMQP_PORT=5672
+      - AMQP_USERNAME=guest
+      - AMQP_PASSWORD=guest
+      - AMQP_EXCHANGE=push_broker
+      - AMQP_QUEUE=message
+      - AMQP_DELIVERY_EXCHANGE=push_broker_delivery
+      - AMQP_DELIVERY_QUEUE=message_delivery
+      - AMQP_PREFETCH_COUNT=10
+      - AMQP_POOL_SIZE=10
+      - DEFAULT_QOS=0
+      - MESSAGE_SERVICE_URL=http://178.128.92.77:5005/v1
+      - JWT_SECRET=sdk
+      - AES_KEY=com.datacultr.experience.sdk.256
+      - KAFKA_SEND_TOPIC=push_broker.send
+      - KAFKA_DELIVERED_TOPIC=push_broker.deliverd
+      - KAFKA_URL=178.128.92.77:9092
+      - KAFKA_HOST=13.76.97.215
+      - KAFKA_PORT=9092
+      - KAFKA_TOPICS=DevicesPing,DevicesHealth,DevicesLocation
+      - UPSTREAM_TOPICS=/devices/ping,devices/health,devices/location
+    ports:
+      - 1883:1883
+      - 18083:18083
+      - 8083:8083
