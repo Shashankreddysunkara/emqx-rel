@@ -17,11 +17,10 @@ services:
       - EMQX_LISTENER__TCP__EXTERNAL__MAX_CONN_RATE=10240000
       - EMQX_LISTENER__TCP__EXTERNAL__MAX_CONNECTIONS=10240000
       - EMQX_ZONE__EXTERNAL__RETRY_INTERVAL=60s
-      - AMQP_URI=amqp://guest:guest@178.128.92.77:5672
-      - AMQP_HOST=localhost
-      - AMQP_PORT=5672
       - AMQP_USERNAME=guest
       - AMQP_PASSWORD=guest
+      - AMQP_HOST=52.230.12.157
+      - AMQP_PORT=5672
       - AMQP_EXCHANGE=push_broker
       - AMQP_QUEUE=message
       - AMQP_DELIVERY_EXCHANGE=push_broker_delivery
@@ -29,12 +28,10 @@ services:
       - AMQP_PREFETCH_COUNT=10
       - AMQP_POOL_SIZE=10
       - DEFAULT_QOS=0
-      - MESSAGE_SERVICE_URL=http://178.128.92.77:5005/v1
+      - MESSAGE_SERVICE_URL=http://20.184.9.58:5005/v1
+      - MESSAGE_SERVICE_AUTH_TOKEN=YWRtaW46YWRtaW4=
       - JWT_SECRET=sdk
       - AES_KEY=com.datacultr.experience.sdk.256
-      - KAFKA_SEND_TOPIC=push_broker.send
-      - KAFKA_DELIVERED_TOPIC=push_broker.deliverd
-      - KAFKA_URL=178.128.92.77:9092
       - KAFKA_HOST=13.76.97.215
       - KAFKA_PORT=9092
       - KAFKA_TOPICS=DevicesPing,DevicesHealth,DevicesLocation
